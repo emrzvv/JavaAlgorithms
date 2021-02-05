@@ -59,6 +59,9 @@ public class LinkedList
                     previous.next = current.next;
                     current = null;
                 }
+                if (this.head == null) {
+                    this.tail = null;
+                }
                 return true;
             }
             else {
@@ -85,6 +88,9 @@ public class LinkedList
                 else {
                     previous.next = current.next;
                     current = current.next;
+                }
+                if (this.head == null) {
+                    this.tail = null;
                 }
             }
             else {
