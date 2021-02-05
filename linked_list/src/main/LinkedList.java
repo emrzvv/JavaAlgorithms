@@ -122,7 +122,7 @@ public class LinkedList
     }
 
     public void insertAfter(Node _nodeAfter, Node _nodeToInsert) {
-        if (_nodeAfter == this.head) {
+        if (_nodeAfter == this.head || this.head == this.tail) {
             if (this.head == null) {
                 this.addInTail(_nodeToInsert);
             }
