@@ -133,7 +133,7 @@ public class LinkedList
         }
         else {
             Node current = this.head;
-            while (current.value != _nodeAfter.value) {
+            while (current.value != _nodeAfter.value && current != null) {
                 current = current.next;
             }
             if (current != null) {
