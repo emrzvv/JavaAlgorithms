@@ -127,6 +127,10 @@ public class LinkedList
         else if (_nodeAfter == this.tail) {
             this.addInTail(_nodeToInsert);
         }
+        else if (_nodeAfter == null) {
+            _nodeToInsert.next = this.head;
+            this.head = _nodeToInsert;
+        }
         else {
             Node current = this.head;
             while (current.value != _nodeAfter.value) {
