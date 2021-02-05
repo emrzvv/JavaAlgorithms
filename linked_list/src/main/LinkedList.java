@@ -122,8 +122,8 @@ public class LinkedList
     }
 
     public void insertAfter(Node _nodeAfter, Node _nodeToInsert) {
-        if (_nodeAfter == this.head || this.head == this.tail) {
-            if (this.head == null) {
+        if (_nodeAfter == this.head) {
+            if (this.head == null || this.head == this.tail) {
                 this.addInTail(_nodeToInsert);
             }
             else {
