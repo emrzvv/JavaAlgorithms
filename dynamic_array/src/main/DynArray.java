@@ -39,7 +39,6 @@ public class DynArray<T>
         else {
             throw new ArrayIndexOutOfBoundsException();
         }
-        return null;
     }
 
     public void append(T itm)
