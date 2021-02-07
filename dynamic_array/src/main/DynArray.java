@@ -59,6 +59,9 @@ public class DynArray<T>
             array[index] = itm;
             count++;
         }
+        else {
+            throw new ArrayIndexOutOfBoundsException();
+        }
     }
 
     public void remove(int index)
@@ -76,6 +79,9 @@ public class DynArray<T>
                     makeArray(capacity * 2 / 3);
                 }
             }
+        }
+        else {
+            throw new ArrayIndexOutOfBoundsException();
         }
     }
 
