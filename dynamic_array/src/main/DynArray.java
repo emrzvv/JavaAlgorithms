@@ -36,6 +36,9 @@ public class DynArray<T>
         if (0 <= index && index < count) {
             return array[index];
         }
+        else {
+            throw new ArrayIndexOutOfBoundsException();
+        }
         return null;
     }
 
