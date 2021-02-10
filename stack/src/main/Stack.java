@@ -19,6 +19,7 @@ public class Stack<T>
             data = (T[]) new Object[new_capacity];
             System.arraycopy(holdData, 0, data, 0, count);
         }
+        capacity = new_capacity;
     }
 
     public Stack()
