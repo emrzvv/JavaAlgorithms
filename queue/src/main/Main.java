@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static <T> void queueShift(Queue<T> queue, int n) {
+        n = n % queue.size();
         while (n > 0) {
             queue.enqueue(queue.dequeue());
             --n;
@@ -30,5 +31,7 @@ public class Main {
             }
             queue.display();
         }
+        queueShift(queue, 6);
+        queue.display();
     }
 }
