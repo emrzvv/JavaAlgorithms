@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
 
-        OrderedList<Integer> ol = new OrderedList<>(false);
+        OrderedList<Integer> ol = new OrderedList<>(true);
         int req = s.nextInt();
         for (int q = 0; q < req; ++q) {
             int type = s.nextInt();

@@ -75,6 +75,7 @@ public class OrderedList<T>
 
         if (head == null) {
             addInTail(n);
+            amount++;
             return;
         }
         else if (compare(head.value, n.value) == (-1) * cmpFlag) {
@@ -228,6 +229,6 @@ public class OrderedList<T>
             backward++;
         }
 
-        return forward == backward;
+        return forward == backward && this.count() == forward;
     }
 }
