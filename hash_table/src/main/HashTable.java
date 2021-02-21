@@ -9,12 +9,14 @@ public class HashTable
     public String [] slots;
     public int BASE = 2017;
     public int MOD;
+    public boolean empty;
 
     public HashTable(int _size, int _step)
     {
         size = _size;
         step = _step;
         MOD = size;
+        empty = true;
         slots = new String[size];
         powers = new int[size];
         powers[0] = 1;
@@ -42,20 +44,27 @@ public class HashTable
     public int seekSlot(String value)
     {
         int hash = hashFun(value);
-        int firstHash = hash;
-        boolean passed = false;
-        while (slots[hash] != null) {
-            hash += step;
-            if (hash >= size) passed = true;
-            hash %= MOD;
-            if (passed && hash >= firstHash) {
-                break;
+        if (!empty) {
+            int firstHash = hash;
+            boolean passed = false;
+            while (slots[hash] != null) {
+                hash += step;
+                if (hash >= size) passed = true;
+                hash %= MOD;
+                if (passed && hash >= firstHash) {
+                    break;
+                }
+            }
+            if (slots[hash] != null || passed && hash >= firstHash) {
+                return -1;
+            }
+            else {
+                return hash;
             }
         }
-        if (slots[hash] != null || passed && hash >= firstHash) {
-            return -1;
-        }
         else {
+            empty = false;
+            slots[hash] = value;
             return hash;
         }
     }
