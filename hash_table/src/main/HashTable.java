@@ -24,10 +24,6 @@ public class HashTable
             }
             slots[i] = null;
         }
-        for (int i = 0; i < 40; ++i) {
-            System.out.print(powers[i] + " ");
-        }
-        System.out.println();
     }
 
 
