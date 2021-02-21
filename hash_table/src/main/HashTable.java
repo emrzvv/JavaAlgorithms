@@ -34,7 +34,7 @@ public class HashTable
         int n = value.length();
         int hash = 0;
         for (int i = 0; i < n; ++i) {
-            hash += powers[i] * (value.charAt(i) - 'a' + 1);
+            hash += powers[i] * (value.charAt(i) + 1);
             hash += MOD;
             hash %= MOD;
         }
