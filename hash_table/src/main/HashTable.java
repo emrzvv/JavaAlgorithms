@@ -70,9 +70,17 @@ public class HashTable
 
     public int put(String value)
     {
-        int idx = seekSlot(value);
-        if (idx != -1) {
+        int idx;
+        if (!empty) {
+            idx = seekSlot(value);
+            if (idx != -1) {
+                slots[idx] = value;
+            }
+        }
+        else {
+            idx = hashFun(value);
             slots[idx] = value;
+            empty = false;
         }
         return idx;
     }
