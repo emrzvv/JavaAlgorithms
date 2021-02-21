@@ -87,6 +87,9 @@ public class HashTable
 
     public int find(String value)
     {
+        if (empty) {
+            return -1;
+        }
         int hash = hashFun(value);
         int firstHash = hash;
         boolean passed = false;
