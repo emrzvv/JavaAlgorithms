@@ -28,6 +28,11 @@ public class Main {
                     System.out.println("not found");
                 }
             }
+            else if (type == 3) {
+                String line = s.nextLine();
+                int result = table.seekSlot(line);
+                System.out.println(result);
+            }
             table.outputNonNull();
         }
     }

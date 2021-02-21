@@ -64,7 +64,6 @@ public class HashTable
         }
         else {
             empty = false;
-            slots[hash] = value;
             return hash;
         }
     }
