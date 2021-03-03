@@ -22,6 +22,7 @@ class NativeDictionary<T>
         powers = new int[size];
         slots[0] = null;
         values[0] = null;
+        powers[0] = 1;
         for (int i = 1; i < size; ++i) {
             powers[i] = (powers[i - 1] * BASE + MOD) % MOD;
             slots[i] = null;
@@ -114,7 +115,7 @@ class NativeDictionary<T>
     public void outputNonNull() {
         for (int i = 0; i < size; ++i) {
             if (slots[i] != null) {
-                System.out.println(slots[i] + " : " + values[i]);
+                System.out.println(i + " - " + slots[i] + " : " + values[i]);
             }
         }
     }
