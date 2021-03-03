@@ -29,10 +29,13 @@ class NativeDictionary<T>
         }
     }
 
-    public int seekSlot(String value, int hash) {
+    public int seekSlot(String key, int hash) {
         int firstHash = hash;
         boolean passed = false;
         while (slots[hash] != null) {
+            if (slots[hash].equals(key)) {
+                break;
+            }
             hash += step;
             if (hash >= size) passed = true;
             hash %= MOD;
@@ -40,7 +43,7 @@ class NativeDictionary<T>
                 break;
             }
         }
-        if (slots[hash] != null || passed && hash >= firstHash) {
+        if ((slots[hash] != null && !slots[hash].equals(key)) || passed && hash >= firstHash) {
             return -1;
         }
         else {
