@@ -31,7 +31,7 @@ public class PowerSet
     public PowerSet()
     {
         size = 20000;
-        slotSize = 100;
+        slotSize = 50;
         amount = 0;
         MOD = size;
 
