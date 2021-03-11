@@ -153,14 +153,13 @@ public class PowerSet
 
     public PowerSet difference(PowerSet set2)
     {
-        PowerSet _union = this.union(set2);
         PowerSet _intersection = this.intersection(set2);
         PowerSet result = new PowerSet();
 
-        for (int i = 0; i < _union.size; ++i) {
-            for (int j = 0; j < _union.slotSize; ++j) {
-                if (_union.slots[i][j] != null && !_intersection.get(_union.slots[i][j])) {
-                    result.put(_union.slots[i][j]);
+        for (int i = 0; i < this.size; ++i) {
+            for (int j = 0; j < this.slotSize; ++j) {
+                if (slots[i][j] != null && !_intersection.get(slots[i][j])) {
+                    result.put(slots[i][j]);
                 }
             }
         }
